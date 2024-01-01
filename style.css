@@ -48,6 +48,7 @@ header h3{
     margin-block-start: auto;
     padding-left: 10px;
 }
+/* main */
 main {
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
@@ -59,23 +60,90 @@ main {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
-    width: 500px;
+    width: 600px;
     padding: 20px;
     text-align: center;
+    display: inline-block;
+}
+#welcomecontainer{
+    width: 150px;
+    display: inline-block;
 }
 .welcome{
-    position: relative;
+    /* position: relative; */
     color: blue;
+    font-size: 30px;
+    /* margin-top: 0px; */
+    display: inline-block;
+    overflow: hidden;
+    text-wrap: nowrap;
+    border-right: 4px solid white;
+    /* word-wrap: break-word; */
+    width: 0;
+    margin: 0px auto;
+    animation: typing ,
+                blink-caret .75s step-end infinite; ;
+    animation-duration: 2.5s;
+    animation-timing-function: steps(13, end);
+    animation-fill-mode: forwards;
+  
+}
+
+.main .introduction{
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 24px;
-    margin-top: 0px;
-    /* padding-bottom: 18px; */
-    animation-name: colorChange;
-    animation-duration: 5s;
-    animation-timing-function: cubic-bezier(1, 0, 0, 1);
-    animation-iteration-count: 1;
-    opacity: 0;
+
+    /* width: inherit; */
+
+}
+main  #typing{
+    color:#0000;
+    font-size: 24px;
+    font-weight: 800;
+    font-family: monospace;
+    /* overflow: hidden;
+    text-wrap: nowrap; */
+    background: linear-gradient(-90deg,#f4f8f8 5px,#0000 0) 10px 0, linear-gradient(#ecf3f3 0 0) 0 0;
+    background-size:calc(var(--n)*1ch) 200%;
+    -webkit-background-clip:padding-box,text;
+    background-clip:padding-box,text;
+    background-repeat:no-repeat;
+   
+    animation: 
+        b .7s  infinite steps(1),   
+        t calc(var(--n)*.1s) steps(var(--n)) forwards;
+    
+       
+}
+@keyframes t{
+  from {background-size:0 200%}
+}
+@keyframes b{
+
+    50% {
+        background-position:0 -100%,0 0 ;
+       
+    
+    }
+}
+    
+
+@keyframes typing {
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 100%;
+        display: none;
+    }
     
 }
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: rgb(240, 238, 236); }
+}
+
 footer{
     position: absolute;
     bottom: 0px;
@@ -87,7 +155,7 @@ footer{
     align-items: center;
 }
 
-
+/* not needed anymore 
 @keyframes colorChange {
     0%{
         color: rgb(7, 2, 53);
@@ -124,7 +192,7 @@ footer{
         
     }
     
-}
+} */
 @media only  screen and (max-width:600px){
     header > img:first-of-type{
       
@@ -143,8 +211,24 @@ footer{
     }
     main{
         width: 95%;
+        padding: 10px;
+        padding-top: 5px;
+
+    }
+    main  #typing{
+        font-size: 20px;
     }
 
 
 
+}
+@media only screen and (max-width : 360px) {
+    main{
+        padding: 5px;
+    }
+    main  #typing{
+        font-size: 16px;
+    }
+
+    
 }
