@@ -12,7 +12,7 @@ body,html{
     box-sizing: border-box;
 }
 .bgimage{
-    background: url('./bgimg2.jpg')no-repeat center center fixed ;
+    background: url('./assests/bgimg2.jpg')no-repeat center center fixed ;
     background-size: cover;
     filter: blur(8px);
     -webkit-filter: blur(8px);
@@ -29,24 +29,29 @@ header{
     align-items: center;
     justify-content: center;
 }
-header > img:first-of-type{
+header > img:nth-of-type(2){
     width: 95px;
     height: 52%;
     object-fit: cover;
     margin-left: -3px;
 }
-header > img:nth-of-type(2){
+header > img:first-of-type{
     width: 70px;
     height: 49%;
     margin-top: 5px;
     object-fit: cover;
     /* margin-left: -21px; */
-    margin-right: 24px;
+    /* margin-right: 24px; */
 
 }
 header h3{
     margin-block-start: auto;
     padding-left: 10px;
+}
+header h3:first-of-type{
+    padding-left: 15px;
+    margin-right: 15px;
+    margin-left: -33px;
 }
 /* main */
 main {
@@ -144,15 +149,48 @@ main  #typing{
     50% { border-color: rgb(240, 238, 236); }
 }
 
+.biggertext {
+    /* color:#bf161600; */
+    font-size: x-large;
+    font-weight: 800;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.biggerverse{
+    color: #14ecf5;
+    font-size: 26px;
+    font-weight: 800;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+}
+#genbutton {
+    padding: 7px;
+    font-size: 18px;
+    font-weight: 800;
+    left: 50%;
+    background-color: white;
+    color: black;
+    border: none;
+    z-index: 1999;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    box-shadow: 0px 4px 10px 4px black;
+   
+}
+.verse{
+    text-align: center;
+}
 footer{
     position: absolute;
     bottom: 0px;
-    /* text-align: center; */
+    text-align: center;
     display: flex;
-    z-index: 99999;
+    z-index:1;
     justify-content: center;
     width: 100%;
     align-items: center;
+}
+footer p{
+    margin: 0px auto;
 }
 
 /* not needed anymore 
@@ -194,25 +232,25 @@ footer{
     
 } */
 @media only  screen and (max-width:600px){
-    header > img:first-of-type{
+    header > img:nth-of-type(2){
       
         height: 20%;
         object-fit: cover;
         margin-left: -3px;
     }
-    header > img:nth-of-type(2){
+    header > img:first-of-type{
         
         height: 49%;
         align-self: end;
         object-fit: cover;
         margin-left: -9px;
-        margin-right: 10px;
+        /* margin-right: 10px; */
     
     }
     main{
         width: 95%;
         padding: 10px;
-        padding-top: 5px;
+        padding-top: 2px;
 
     }
     main  #typing{
@@ -222,13 +260,44 @@ footer{
 
 
 }
-@media only screen and (max-width : 360px) {
+@media only screen and (max-width : 348px) {
     main{
         padding: 5px;
     }
     main  #typing{
         font-size: 16px;
     }
+    header h3:last-of-type{
+        margin-right: -20px;
+        padding-left: 15px;
+    }
+    header > img:nth-of-type(2){
+      
+        height: 20%;
+        object-fit: cover;
+        margin-left: -3px;
+        margin-right: -26px;
+    }
+    header > img:first-of-type{
+        
+        height: 49%;
+        align-self: end;
+        object-fit: cover;
+        margin-left: -9px;
+        /* margin-right: 10px; */
+    
+    }
 
     
+}
+@media only screen and (min-height : 880px) {
+    #genbutton {
+        margin-bottom: 155px;
+    }
+
+}@media only screen and (min-height : 1100px) {
+    #genbutton {
+        margin-bottom: 255px;
+    }
+
 }
